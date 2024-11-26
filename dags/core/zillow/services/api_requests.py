@@ -1,7 +1,7 @@
 import requests
 import time
 import logging
-from core import settings
+from core.configurations import settings
 
 
 def make_request_with_retries(url, querystring, headers=None, max_retries=5):
@@ -23,6 +23,7 @@ def make_request_with_retries(url, querystring, headers=None, max_retries=5):
             time.sleep(wait_time)
         else:
             logging.error(f"Failed to fetch data: {response.status_code}")
+            logging.error(f"Response Text: {response.text}")
             return None
     logging.error("Max retries exceeded")
     return None
