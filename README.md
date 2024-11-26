@@ -26,11 +26,14 @@ This pipeline can serve as a reference or starting point for:
 - Handles rate limits to ensure data retrieval within allocated quotas.
 
 ### Data Transformation
-- Processes raw data to calculate metrics such as time-on-market and property comparisons.
-- Merges incoming data into existing datasets to maintain a single source of truth.
+- Processes raw property data by scraping the JSON response using a variety of functions.
+- Each function represents a table that'll be updated in BigQuery.
+
 
 ### Data Storage
-- Loads processed data into a staging dataset and integrates updates into a final dataset for downstream analytics.
+- Data is stored into GCS for historical purposes and then copied into a loading dataset in BigQuery.
+- Dataform is triggered to clean, model and insert data into reporting datasets for downstream analytics.
+
 
 ### Extensibility
 - Designed with modularity in mind, allowing users to adapt components for their own pipelines.
