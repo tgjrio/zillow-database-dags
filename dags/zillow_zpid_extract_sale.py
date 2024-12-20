@@ -4,7 +4,7 @@ from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
 import logging
 from datetime import datetime, timedelta
-from dags.core.zillow.fetch import fetch_zpids_for_sale
+from core.zillow.fetch import fetch_zpids_for_sale
 from core.zillow.configurations import regions
 from google.cloud import storage   
 import json
@@ -23,7 +23,7 @@ with DAG(
     'zillow_zpid_extract_sale',
     default_args=default_args,
     description='DAG to fetch and process Zillow data with dynamic region support',
-    schedule_interval='0 5 * * * ', # Runs at 10:00 AM UTC (5:00 AM Eastern Standard Time)
+    schedule_interval='@daily', # Runs at 10:00 AM UTC (5:00 AM Eastern Standard Time)
     start_date=datetime(2024, 11, 14),
     catchup=False,
 

@@ -20,6 +20,7 @@ with DAG(
     schedule_interval=None,
     start_date=None,
     catchup=False,
+    dagrun_timeout=timedelta(hours=6),
 
 ) as dag:
 

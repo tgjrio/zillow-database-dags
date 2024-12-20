@@ -6,8 +6,9 @@ from airflow.providers.google.cloud.operators.dataform import (
     DataformCreateWorkflowInvocationOperator,
 )
 from airflow.providers.google.cloud.sensors.dataform import DataformWorkflowInvocationStateSensor
-from datetime import datetime, timedelta
-from core.configurations import settings
+from datetime import timedelta
+from core.zillow.configurations import settings
+
 
 # Default DAG arguments
 default_args = {

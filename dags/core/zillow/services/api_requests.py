@@ -1,7 +1,7 @@
 import requests
 import time
 import logging
-from core.configurations import settings
+from core.zillow.configurations import settings
 
 
 def make_request_with_retries(url, querystring, headers=None, max_retries=5):

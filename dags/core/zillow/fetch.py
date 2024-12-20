@@ -1,6 +1,6 @@
 import logging
-from core.configurations import settings
-from core.services.api_requests import make_request_with_retries
+from core.zillow.configurations import settings
+from core.zillow.services.api_requests import make_request_with_retries
 
 def fetch_zpids_for_sale(location, **kwargs):
         headers = {

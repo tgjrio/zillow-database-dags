@@ -1,12 +1,15 @@
-from .configurations import settings
-import logging
-from core.services.api_requests import make_request_with_retries
-from core.configurations.storage import save_to_gcs, load_data_to_bigquery, load_data_to_bigquery_append
-import json
-from .services import dataScraper as ds
-from .services import resoScraper as rs
+
 from google.cloud import storage
 import time
+import logging
+import json
+
+from core.zillow.configurations import settings
+from core.zillow.services import dataScraper as ds
+from core.zillow.services import resoScraper as rs
+from core.zillow.services.api_requests import make_request_with_retries
+from core.zillow.configurations.storage import save_to_gcs, load_data_to_bigquery, load_data_to_bigquery_append
+
 
 # Configure logging
 logging.basicConfig(
