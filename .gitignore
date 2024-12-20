@@ -5,3 +5,6 @@ deploy.sh
 redis_test.py
 development/
 example.ipynb
+
+__pycache__/
+__pycache__
